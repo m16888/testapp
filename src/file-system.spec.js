@@ -1,4 +1,6 @@
 const fs = require('fs');
+const fsp = require('fs').promises;
+
 const {
     readJsonSync,
     appendToFileSync,
@@ -49,7 +51,7 @@ describe('file-system', () => {
 
     describe('readJsonAsync()', () => {
         it('should read JSON file, deserialize its content and return it (asynchronously)', (done) => {
-            const readFileSpy = spyOn(fs, 'readFile').and.callThrough();
+            const readFileSpy = spyOn(fsp, 'readFile').and.callThrough();
             readJsonAsync('./resources/groceries.json')
                 .then(result => {
                     expect(readFileSpy).toHaveBeenCalled();
