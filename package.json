@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-file-system-nodejs",
+  "private": true,
+  "scripts": {
+    "test": "node test.js",
+    "test:watch": "chokidar \"**/*.js\" -c \"npm test\" --silent --initial --ignore node_modules"
+  },
+  "dependencies": {
+    "chokidar-cli": "2.1.0",
+    "jasmine": "^3.9.0",
+    "jasmine-reporters": "^2.5.0"
+  }
+}
